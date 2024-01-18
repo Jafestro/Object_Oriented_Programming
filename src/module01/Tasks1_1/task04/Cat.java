@@ -1,4 +1,4 @@
-package module01.Tasks.task04;
+package module01.Tasks1_1.task04;
 
 public class Cat {
     //Fields, attributes

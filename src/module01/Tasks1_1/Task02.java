@@ -1,4 +1,4 @@
-package module01.Tasks;
+package module01.Tasks1_1;
 
 public class Task02 {
     public static void main(String[] args) {
