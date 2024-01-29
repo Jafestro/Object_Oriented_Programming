@@ -1,4 +1,6 @@
-package module02.Tasks2_3.task01;
+package module02.Tasks2_3.task02;
+
+import module02.Tasks2_3.task01.Book;
 
 import java.util.ArrayList;
 
@@ -26,5 +28,20 @@ public class Library {
             if (book.getAuthor().equals(author))
                 System.out.println("\"" + book.getTitle() + "\", " + book.getYearOfPublication());
         }
+    }
+
+    //Task 2.3.2 Borrow/return book
+    public void borrowBook(String title){
+        if (books.stream().anyMatch(book -> book.getTitle().equals(title))){
+            System.out.println("Borrowing book \"" + title + "\"...");
+            books.removeIf(book -> book.getTitle().equals(title));
+        }
+        else
+            System.out.println("Book " + title + " is not in the library");
+    }
+
+    public void returnBook(Book book){
+        System.out.println("Returning book \"" + book.getTitle() + "\"...");
+        books.add(book);
     }
 }
