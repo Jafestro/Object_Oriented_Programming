@@ -1,4 +1,4 @@
-package module02.Tasks2_2.task03;
+package module02.Tasks2_2.task05;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,6 +6,7 @@ import java.util.HashMap;
 public class GroceryListManager {
     HashMap<String, Double> groceryList = new HashMap<>();
     HashMap<String, ArrayList<String>> groceryListWithCategory = new HashMap<>();
+    HashMap<String, Integer> groceryListWithQuantity = new HashMap<>();
 
     //Methods
     public void addItem(String item, double cost) {
@@ -73,15 +74,49 @@ public class GroceryListManager {
         }
     }
 
+    //Task4 Grocery List with Quantity
+    public void addItemWithQuantity(String item, int quantity){
+        if (checkItem(item))
+            System.out.println("Item " + item + " is already in the list");
+        else
+            groceryListWithQuantity.put(item, quantity);
+    }
+
+    public void updateQuantity(String item, int quantity){
+        if (checkItem(item))
+            groceryListWithQuantity.put(item, quantity);
+        else
+            System.out.println("Item " + item + " is not in the list");
+    }
+
+    public void displayAvailableItems(){
+        System.out.println("Available items:");
+        for (String item : groceryListWithQuantity.keySet()){
+            System.out.println(item + " - " + groceryListWithQuantity.get(item));
+        }
+    }
+
+    //Task5 Shopping List
     public static void main(String[] args) {
-        GroceryListManager groceryListManager = new GroceryListManager();
-        groceryListManager.addItemWithCategory("Apple", "Fruits");
-        groceryListManager.addItemWithCategory("Pear", "Fruits");
-        groceryListManager.addItemWithCategory("Mango", "Fruits");
-        groceryListManager.addItemWithCategory("Milk", "Dairy");
-        groceryListManager.addItemWithCategory("Bread", "Bakery");
-        groceryListManager.displayByCategory("Bakery");
+        ShoppingList shoppingList = new ShoppingList();
+        shoppingList.addItem( "Backyard BBQ", "Weekend Camping");
+        shoppingList.addItem( "Coals", "Weekend Camping");
+        shoppingList.addItem( "Hot Dogs", "Weekend Camping");
+        shoppingList.addItem( "Hamburger", "Weekend Camping");
+        shoppingList.addItem( "Blankets", "Sleepover");
+        shoppingList.addItem( "Pillows", "Sleepover");
+        shoppingList.addItem( "Pajamas", "Sleepover");
+
+        ShoppingList shoppingList2 = new ShoppingList();
+        shoppingList2.addItem( "Bread", "Summer House");
+        shoppingList2.addItem( "Milk", "Summer House");
+        shoppingList2.addItem( "Eggs", "Summer House");
+        shoppingList2.addItem( "Butter", "Summer House");
+
+        shoppingList.displayList();
+        shoppingList2.displayList();
+
+        System.out.println(shoppingList.shoppingList.get("Weekend Camping"));
     }
 }
-
 
