@@ -8,7 +8,7 @@ public class Car {
      * Both are private (they can not be accessed outside the class methods).
      * Keep instance variables private whenever possible.
      */
-    private float speed;
+    private int speed;
     private float gasolineLevel;
     private String typeName;
     private boolean cruiseControlOn;
@@ -17,13 +17,14 @@ public class Car {
      * Constructors may also have arguments.
      */
     public Car(String typeName) {
-        speed = 0; gasolineLevel = 0;
+        speed = 0;
+        gasolineLevel = 0;
         this.typeName = typeName;   // this refers to the object itself.
         // The reference is useful if you want to use parameter names that are
         // identical to instance variable names (and for more, later on)
     }
 
-    public Car(float speed, float gasolineLevel, String typeName) {
+    public Car(int speed, float gasolineLevel, String typeName) {
         this.speed = speed;
         this.gasolineLevel = gasolineLevel;
         this.typeName = typeName;
@@ -38,6 +39,7 @@ public class Car {
         else
             speed = 0;
     }
+
     void decelerate(int amount) {
         if (gasolineLevel > 0) {
             if (amount > 0)
@@ -45,20 +47,49 @@ public class Car {
         } else
             speed = 0;
     }
-    //TODO: Implement cruise control
-    public void setCruiseControl() {
-        cruiseControlOn = !cruiseControlOn;
 
+    public void setCruiseControl(int minSpeed, int maxSpeed, int targetSpeed) {
+        cruiseControlOn = true;
+        System.out.println("Cruise control on");
+        if (speed >= minSpeed && speed <= targetSpeed) {
+            for (int i = 0; i <= ((targetSpeed - speed) / 10); i++) {
+                accelerate();
+                System.out.println(getTypeName() + ": speed is " + getSpeed() + " km/h");
+            }
+            decelerate(speed - targetSpeed);
+        } else if (speed >= targetSpeed && speed <= maxSpeed) {
+            int amount = speed - targetSpeed;
+            for (int i = 0; i < amount; i++) {
+                decelerate(1);
+                System.out.println(getTypeName() + ": speed is " + getSpeed() + " km/h");
+            }
+        } else {
+            System.out.println("Cruise control failed");
+            turnOffCruiseControl();
+        }
     }
+
+    public void turnOffCruiseControl() {
+        cruiseControlOn = false;
+        System.out.println("Cruise control off");
+    }
+
+    public int readCurrentTargetSpeed() {
+        return speed;
+    }
+
     float getSpeed() {
         return speed;
     }
+
     String getTypeName() {
         return typeName;
     }
+
     void fillTank() {
         gasolineLevel = 100;
     }
+
     float getGasolineLevel() {
         return gasolineLevel;
     }
