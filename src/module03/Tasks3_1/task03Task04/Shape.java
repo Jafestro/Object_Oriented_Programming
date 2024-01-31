@@ -1,4 +1,4 @@
-package module02.Tasks3_1.task03Task04;
+package module03.Tasks3_1.task03Task04;
 
 public class Shape {
     //Task 4---------------------------------

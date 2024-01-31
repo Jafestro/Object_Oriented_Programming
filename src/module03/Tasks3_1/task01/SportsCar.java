@@ -1,4 +1,4 @@
-package module02.Tasks3_1.task01;
+package module03.Tasks3_1.task01;
 
 import module02.Tasks2_1.task04.Car;
 
