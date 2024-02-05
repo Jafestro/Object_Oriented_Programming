@@ -1,6 +1,6 @@
 package module03.Tasks3_2.task01_04;
 
-public abstract class AbstractVehicle implements Vehicle {
+public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String type, fuel;
 
     public AbstractVehicle(String type, String fuel) {

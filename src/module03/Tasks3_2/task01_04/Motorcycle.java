@@ -22,9 +22,13 @@ public class Motorcycle extends AbstractVehicle{
     public void makeSound() {
         System.out.println("Motorcycle is making sound Broom Broom");
     }
-
     @Override
     public String getInfo() {
         return "Type: " + type + "\nFuel: " + fuel + "\nColor: " + color + "\n";
+    }
+
+    @Override
+    public void charge() {
+        System.out.println("Can't charge a motorcycle");
     }
 }

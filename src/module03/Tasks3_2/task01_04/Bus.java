@@ -27,4 +27,9 @@ public class Bus extends AbstractVehicle{
     public String getInfo() {
         return "Type: " + type + "\nFuel: " + fuel + "\nCapacity: " + capacity + " passengers\n";
     }
+
+    @Override
+    public void charge() {
+        System.out.println("Can't charge a bus");
+    }
 }

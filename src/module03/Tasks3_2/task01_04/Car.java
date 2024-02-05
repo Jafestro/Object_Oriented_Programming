@@ -27,4 +27,9 @@ public class Car extends AbstractVehicle{
     public String getInfo() {
         return "Type: " + type + "\nFuel: " + fuel + "\nColor: " + color + "\n";
     }
+
+    @Override
+    public void charge() {
+        System.out.println("Can't charge a car");
+    }
 }
