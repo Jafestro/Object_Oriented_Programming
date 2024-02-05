@@ -29,6 +29,11 @@ public class Bus extends AbstractVehicle{
     }
 
     @Override
+    public void calculateFuelEfficiency() {
+        System.out.printf("Fuel efficiency of a bus is %s km/l\n", fuelEfficiency);
+    }
+
+    @Override
     public void charge() {
         System.out.println("Can't charge a bus");
     }

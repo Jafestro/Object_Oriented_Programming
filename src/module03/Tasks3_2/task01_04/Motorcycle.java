@@ -28,6 +28,11 @@ public class Motorcycle extends AbstractVehicle{
     }
 
     @Override
+    public void calculateFuelEfficiency() {
+        System.out.printf("Fuel efficiency of a motorcycle is %s km/l\n", fuelEfficiency);
+    }
+
+    @Override
     public void charge() {
         System.out.println("Can't charge a motorcycle");
     }

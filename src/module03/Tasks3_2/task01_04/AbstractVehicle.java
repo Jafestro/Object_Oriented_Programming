@@ -2,6 +2,7 @@ package module03.Tasks3_2.task01_04;
 
 public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String type, fuel;
+    protected double fuelEfficiency;
 
     public AbstractVehicle(String type, String fuel) {
         this.type = type;
@@ -31,6 +32,14 @@ public abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
 
     public String getFuel() {
         return fuel;
+    }
+
+    public double getFuelEfficiency() {
+        return fuelEfficiency;
+    }
+
+    public void setFuelEfficiency(double fuelEfficiency) {
+        this.fuelEfficiency = fuelEfficiency;
     }
 
     public void setType(String type) {

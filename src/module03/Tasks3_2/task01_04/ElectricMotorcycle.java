@@ -31,4 +31,9 @@ public class ElectricMotorcycle extends AbstractVehicle {
     public String getInfo() {
         return "Type: " + type + "\nFuel: " + fuel + "\nColor: " + color + "\n";
     }
+
+    @Override
+    public void calculateFuelEfficiency() {
+        System.out.printf("Fuel efficiency of a motorcycle is %s km/kWh\n", fuelEfficiency);
+    }
 }

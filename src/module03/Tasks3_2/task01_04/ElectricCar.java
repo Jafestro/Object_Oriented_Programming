@@ -31,4 +31,10 @@ public class ElectricCar extends AbstractVehicle{
     public String getInfo() {
         return "Type: " + type + "\nFuel: " + fuel + "\nColor: " + color + "\n";
     }
+
+    @Override
+    public void calculateFuelEfficiency() {
+        System.out.printf("Fuel efficiency of a car is %s km/kWh\n", fuelEfficiency);
+    }
+
 }
