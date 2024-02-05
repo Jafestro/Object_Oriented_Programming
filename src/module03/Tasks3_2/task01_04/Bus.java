@@ -1,12 +1,10 @@
 package module03.Tasks3_2.task01_04;
 
-public class Bus implements Vehicle{
-    String type, fuel;
+public class Bus extends AbstractVehicle{
     int capacity;
 
     public Bus(String type, String fuel, int capacity) {
-        this.type = type;
-        this.fuel = fuel;
+        super(type, fuel);
         this.capacity = capacity;
     }
 
@@ -18,6 +16,11 @@ public class Bus implements Vehicle{
     @Override
     public void stop() {
         System.out.println("Bus is stopping");
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Bus is making sound Psh Psh");
     }
 
     @Override

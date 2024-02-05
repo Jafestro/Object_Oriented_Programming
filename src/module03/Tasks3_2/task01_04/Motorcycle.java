@@ -1,11 +1,10 @@
 package module03.Tasks3_2.task01_04;
 
-public class Motorcycle implements Vehicle{
-    String type, fuel, color;
+public class Motorcycle extends AbstractVehicle{
+    String color;
 
     public Motorcycle(String type, String fuel, String color) {
-        this.type = type;
-        this.fuel = fuel;
+        super(type, fuel);
         this.color = color;
     }
 
@@ -17,6 +16,11 @@ public class Motorcycle implements Vehicle{
     @Override
     public void stop() {
         System.out.println("Motorcycle is stopping");
+    }
+
+    @Override
+    public void makeSound() {
+        System.out.println("Motorcycle is making sound Broom Broom");
     }
 
     @Override
