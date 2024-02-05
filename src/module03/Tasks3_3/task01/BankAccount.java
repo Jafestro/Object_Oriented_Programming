@@ -1,7 +1,6 @@
 package module03.Tasks3_3.task01;
 
 public class BankAccount {
-    // Your variable declarations and code here
     private int accountNumber;
     private double balance;
     private static int totalAccounts = 0;
