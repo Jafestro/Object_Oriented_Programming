@@ -16,4 +16,19 @@ public class ElectricMotorcycle extends AbstractVehicle {
     public void charge() {
         System.out.println("ElectricMotorcycle is charging");
     }
+
+    @Override
+    public void start() {
+        System.out.println("ElectricMotorcycle is starting");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("ElectricMotorcycle is stopping");
+    }
+
+    @Override
+    public String getInfo() {
+        return "Type: " + type + "\nFuel: " + fuel + "\nColor: " + color + "\n";
+    }
 }
