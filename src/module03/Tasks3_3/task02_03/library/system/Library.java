@@ -4,6 +4,7 @@ import module03.Tasks3_3.task02_03.library.model.Book;
 import module03.Tasks3_3.task02_03.library.model.LibraryMember;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
     private final ArrayList<Book> books = new ArrayList<>();
@@ -24,5 +25,20 @@ public class Library {
 
     public void returnBooks(ArrayList<Book> books){
         this.books.addAll(books);
+    }
+
+    public void reserveABook(Book book, LibraryMember libraryMember){
+        libraryMember.getReservedBooks().add(book);
+        book.setReserved(true);
+    }
+
+    public void cancelReservation(Book book, LibraryMember libraryMember){
+        libraryMember.getReservedBooks().remove(book);
+        book.setReserved(false);
+    }
+
+    public void displayReservedBooks(LibraryMember libraryMember){
+        System.out.println("Reserved Books of " + libraryMember.getName() + ", ID: " + libraryMember.getMemberID());
+        libraryMember.getReservedBooks().forEach(System.out::println);
     }
 }

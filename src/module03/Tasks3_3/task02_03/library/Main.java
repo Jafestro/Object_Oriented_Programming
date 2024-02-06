@@ -27,5 +27,19 @@ public class Main {
         System.out.println(jake.getName() + " has borrowed " + jake.getBorrowedBooks().size() + " books");
 
         oodi.returnBooks(booksThatJakeWantsToBorrow);
+
+        LibraryMember jonathan = new LibraryMember("Jonathan");
+
+        oodi.reserveABook(book1, jonathan);
+        oodi.reserveABook(book2, jake);
+        oodi.reserveABook(book, jonathan);
+        System.out.println();
+        oodi.displayReservedBooks(jonathan);
+        oodi.displayReservedBooks(jake);
+
+        oodi.cancelReservation(book1, jonathan);
+        System.out.println();
+        oodi.displayReservedBooks(jonathan);
+        oodi.displayReservedBooks(jake);
     }
 }
