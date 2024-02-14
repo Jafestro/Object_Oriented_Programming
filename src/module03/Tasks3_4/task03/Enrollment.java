@@ -40,4 +40,13 @@ public class Enrollment implements Serializable {
     public void setEnrollmentDate(String enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
     }
+
+    @Override
+    public String toString() {
+        return "Enrollment{" +
+                "student=" + student +
+                ", course=" + course +
+                ", enrollmentDate='" + enrollmentDate + '\'' +
+                '}';
+    }
 }
