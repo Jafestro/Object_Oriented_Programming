@@ -1,4 +1,4 @@
-package module05.Task5_2.task01;
+package module05.Task5_2.task01_02;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
